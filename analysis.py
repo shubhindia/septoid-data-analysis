@@ -5,16 +5,18 @@ for i in df.values:
     if i[2] > "09:16" and i[2] < "15:30":
         usable_data.append(i)
 usable_dataframe = pd.DataFrame(usable_data)
-
+j = 0
+k = 0
 for i in usable_dataframe.values:
-    j = 0
-    k = 0
+
     sma14_list = []
     sma30_list = []
     while(j <  14):
         sma14_list.append(i[5])
         j +=1
     sma14_avg = sum(sma14_list) / len(sma14_list)
+    j = 0
+    k = 0
     while(k < 30):
         sma30_list.append(i[5])
         k +=1
